@@ -75,7 +75,7 @@ add-apt-repository universe
 add-apt-repository ppa:certbot/certbot
 apt update && apt install -y nginx certbot python-certbot-nginx
 mkdir -p /var/www/$domain
-
+certbot --nginx
 rm -f /etc/nginx/sites-enabled/default
 cp -v conf/*.conf /etc/nginx/sites-available/
 ln -s /etc/nginx/sites-available/*.conf /etc/nginx/sites-enabled/
